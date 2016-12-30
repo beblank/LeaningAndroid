@@ -2,6 +2,7 @@ package com.ganteng.botak.retrofitexample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.ganteng.botak.retrofitexample.R;
 import com.ganteng.botak.retrofitexample.http.TwitchAPI;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 List<Top> gameList = response.body().getTop();
 
                 for (Top top:gameList){
-                    System.out.print((top.getGame().getName()));
+                    Log.i("dodol", top.getGame().getName());
                 }
             }
 
