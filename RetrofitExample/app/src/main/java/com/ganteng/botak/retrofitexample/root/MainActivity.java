@@ -1,7 +1,9 @@
-package com.ganteng.botak.retrofitexample;
+package com.ganteng.botak.retrofitexample.root;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.ganteng.botak.retrofitexample.R;
 
 public class MainActivity extends AppCompatActivity {
 
