@@ -20,6 +20,10 @@ public class SharedPrefsHelper {
         mSharedPreferences = sharedPreferences;
     }
 
+    public void put(String key, String value){
+        mSharedPreferences.edit().putString(key, value).apply();
+    }
+
     public void put(String key, float value){
         mSharedPreferences.edit().putFloat(key, value).apply();;
     }
@@ -30,6 +34,10 @@ public class SharedPrefsHelper {
 
     public void put(String key, int value){
         mSharedPreferences.edit().putInt(key, value).apply();
+    }
+
+    public String get(String key, String defaultValue){
+        return mSharedPreferences.getString(key, defaultValue);
     }
 
     public Integer get(String key, int defaultValue){
