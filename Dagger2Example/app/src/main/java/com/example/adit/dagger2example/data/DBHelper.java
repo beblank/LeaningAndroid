@@ -56,7 +56,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
             );
         } catch (NullPointerException e){
-            e.printStackTrace();;
+            e.printStackTrace();
         }
     }
 
