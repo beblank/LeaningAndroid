@@ -12,11 +12,12 @@ import com.example.adit.dagger2example.di.ApplicationContext;
 import com.example.adit.dagger2example.di.DatabaseInfo;
 
 import javax.annotation.Resource;
+import javax.inject.Singleton;
 
 /**
  * Created by adit on 1/1/2017.
  */
-
+@Singleton
 public class DBHelper extends SQLiteOpenHelper {
 
 
