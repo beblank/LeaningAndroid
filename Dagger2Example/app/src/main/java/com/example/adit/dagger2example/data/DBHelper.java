@@ -12,6 +12,7 @@ import com.example.adit.dagger2example.di.ApplicationContext;
 import com.example.adit.dagger2example.di.DatabaseInfo;
 
 import javax.annotation.Resource;
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
@@ -29,6 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String USER_COLUMN_USER_CREATED_AT ="created_at";
     public static final String USER_COLUMN_USER_UPDATED_AT ="updated_at";
 
+    @Inject
     public DBHelper(@ApplicationContext Context context, @DatabaseInfo String name, @DatabaseInfo Integer version) {
         super(context, name, null, version);
     }
