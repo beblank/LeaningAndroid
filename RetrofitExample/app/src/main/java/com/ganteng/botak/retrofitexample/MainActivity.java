@@ -63,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(printAction, logOnError, logOnComplete);
 
+        twitchAPI.getTopGamesObservable(TWITCH_API)
+                .flatMap(flatMapTwitchTop)
+                .flatMap(flatMapTwitchGameName)
+                .filter(filterGameName)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(printActionWithFilter, logOnError, logOnComplete);
+
     }
 
     Func1<Twitch, Observable<Top>> flatMapTwitchTop = new Func1<Twitch, Observable<Top>>() {
@@ -89,14 +97,14 @@ public class MainActivity extends AppCompatActivity {
     Action1<String> printActionWithFilter = new Action1<String>() {
         @Override
         public void call(String s) {
-            System.out.println("From rx java with filter" + s);
+            System.out.println("From rx java with filter " + s);
         }
     };
 
     Action1<String> printAction = new Action1<String>() {
         @Override
         public void call(String s) {
-            System.out.print("From rx java" + s);
+            System.out.println("From rx java" + s);
         }
     };
 
