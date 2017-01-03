@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.ganteng.botak.mvpexample.TopMoviesActivity">
 
-    <android.support.v7.app.AlertController.RecycleListView
+    <android.support.v7.widget.RecyclerView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
@@ -17,5 +17,5 @@
         android:scrollbars="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/movie_list_row" >
-    </android.support.v7.app.AlertController.RecycleListView>
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>
