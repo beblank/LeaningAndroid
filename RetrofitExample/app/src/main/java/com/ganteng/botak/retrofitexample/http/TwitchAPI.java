@@ -17,5 +17,5 @@ public interface TwitchAPI {
     Call<Twitch> getTopGames(@Header("Client-Id")String clientID);
 
     @GET("games/top")
-    Observable<Twitch> getTopGamesObservable(@Header("Cllient-Id") String clientId);
+    Observable<Twitch> getTopGamesObservable(@Header("Client-Id") String clientId);
 }
