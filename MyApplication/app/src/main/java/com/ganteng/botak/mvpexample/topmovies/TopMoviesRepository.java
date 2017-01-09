@@ -74,6 +74,7 @@ public class TopMoviesRepository implements Repository {
     Action1<Result> resultActionFromNetwork = new Action1<Result>() {
         @Override
         public void call(Result result) {
+            Log.i("dodol", "call: concat result from network" + result.toString());
             results.add(result);
         }
     };
@@ -121,7 +122,7 @@ public class TopMoviesRepository implements Repository {
 
     @Override
     public Observable<String> getCountryData() {
-        return getCountriesFromMemory().switchIfEmpty(getCountriesFromMemory());
+        return getCountriesFromMemory().switchIfEmpty(getCountriesFromNetwork());
     }
 
     @Override
